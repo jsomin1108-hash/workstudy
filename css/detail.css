@@ -1,0 +1,308 @@
+@font-face {
+    font-family: 'Suit';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Suit';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Suit';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Bold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
+}
+
+body{
+    margin:0;
+    padding:0;
+    background:#F6F2EA;
+    font-family: 'Suit', sans-serif;
+    overflow: hidden;
+}
+
+.container{
+    display:flex;
+    gap:40px;
+    height:calc(100vh);
+}
+
+.left-panel{
+    width: 70%;
+    padding: 40px;
+    box-sizing: border-box;
+
+    border-right: 2px solid #d9d9d9;
+
+    overflow-y: auto;
+}
+
+
+.detail-section{
+    flex:1;
+}
+
+.back-btn{
+    border:none;
+    background:none;
+    font-size:30px;
+    font-weight: 200;
+    cursor:pointer;
+
+    margin:40px 0;
+}
+
+
+.main-image{
+    width:100%;
+    height:400px;
+
+    object-fit:cover;
+
+    border-radius:1px;
+    border:1px solid #393939;
+}
+
+
+.title-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-top:25px;
+}
+
+.title-row h1{
+    margin:0;
+    font-size:38px;
+}
+
+.save-btn{
+    width:45px;
+    height:45px;
+
+    border:1px solid #393939;
+    border-radius:50%;
+
+    background:white;
+    cursor:pointer;
+
+    font-size:18px;
+    transition: all 0.2s ease;
+    white-space: nowrap
+}
+
+
+
+.count-row{
+    display:flex;
+    gap:20px;
+
+    margin-top:15px;
+
+    font-size:18px;
+}
+
+
+.tag-list{
+    display:flex;
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-top:20px;
+}
+
+.card-tag{
+    padding:6px 14px;
+
+    border-radius:20px;
+
+    background:#4E6B43;
+    color:white;
+
+    font-size:14px;
+}
+
+.info-box{
+    margin-top:35px;
+
+    padding:25px;
+
+    background:white;
+
+    border:1px solid #393939;
+    border-radius:10px;
+}
+
+.info-box h3{
+    margin-top:0;
+    margin-bottom:15px;
+
+    font-size:24px;
+}
+
+.info-box p{
+    margin:0;
+
+    font-size:18px;
+    line-height:1.7;
+}
+
+.info-box ul{
+    margin:0;
+    padding-left:20px;
+}
+
+.info-box li{
+    margin-bottom:10px;
+
+    font-size:18px;
+}
+
+.review-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:20px;
+}
+
+.review-card{
+    padding:15px;
+
+    margin-bottom:15px;
+
+    border:1px solid #D9D9D9;
+    border-radius:5px;
+
+    background:#FAFAFA;
+}
+
+.more-btn{
+    width: 100%;
+    padding:10px 20px;
+
+    margin-bottom:15px;
+
+    border:1px solid #D9D9D9;
+    border-radius:10px;
+
+    background:#FAFAFA;
+    cursor: pointer;
+}
+
+.write-review-btn{
+    padding:10px 20px;
+
+    border:none;
+    border-radius:10px;
+
+    background:#4E6B43;
+    color:white;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    display: block;
+    margin-left: auto;
+}
+
+.right-panel{
+    width: 30%;
+    padding: 40px;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+
+.another-section{
+    width:100%;
+    top:30px;
+}
+
+.another-section h2{
+    margin-top:0;
+    margin-bottom:20px;
+}
+
+.another-card{
+    display:flex;
+    gap:15px;
+
+    padding:15px;
+
+    margin-bottom:15px;
+
+    background:white;
+
+    border:1px solid #393939;
+    border-radius:15px;
+
+    cursor:pointer;
+}
+
+.another-card img{
+    width:100px;
+    height:100px;
+
+    object-fit:cover;
+
+    border-radius:10px;
+}
+
+.another-info{
+    flex:1;
+}
+
+.another-info h4{
+    margin:0 0 8px 0;
+
+    font-size:16px;
+}
+
+.another-info p{
+    margin:0;
+
+    font-size:14px;
+}
+
+.navbar-brand {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #000000;
+    text-decoration: none;
+    padding: 0.3125rem;
+    margin-bottom: 30px;
+
+}
+
+.navbar-brand:hover {
+    color: #4A4A4A;
+}
+
+/* 💡 기존 CSS 파일 가장 아래에 그대로 붙여넣으세요 */
+
+/* 1. 박스들을 2개씩 아래로 나열해주는 마법의 격자(Grid) 설정 */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 50%씩 똑같은 너비로 2열 배치 */
+    gap: 20px;                             /* 박스들 사이의 가로, 세로 간격 */
+    margin-top: 35px;                      /* 위쪽 태그 리스트와의 간격 */
+}
+
+/* 2. 기존 info-box에 있던 개별 상단 마진 리셋 */
+.info-grid .info-box {
+    margin-top: 0; /* Grid의 gap이 간격을 알아서 조절하므로 0으로 만듭니다 */
+}
+
+.info-grid .info-box:last-child {
+    grid-column: span 2; /* 혼자서 2칸의 너비를 다 차지함 */
+}

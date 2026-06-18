@@ -1,0 +1,189 @@
+@font-face {
+    font-family: 'Suit';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Suit';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Suit';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Bold.woff2') format('woff2');
+    font-weight: 800;
+    font-display: swap;
+}
+
+body{
+    margin:20px;
+    background:#f6f2eb;
+    font-family:'Suit', sans-serif;
+}
+
+.navbar-brand {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #000000 !important;
+    text-decoration: none;
+    padding: 0.3125rem;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+.navbar-brand:link, 
+.navbar-brand:visited {
+    color: #000000;
+}
+
+.navbar-brand:hover {
+    color: #4A4A4A !important;
+}
+
+.container{
+    max-width:1200px;
+    margin:0 auto;
+    padding-top: 30px;
+    text-align:center;
+}
+
+h1{
+    font-size:45px;
+    margin-bottom:60px;
+}
+
+
+.search-box{
+    background-color: #ffffff;
+    width:600px;
+    margin:0 auto 80px;
+
+    border:3.5px solid black;
+    border-radius:50px;
+
+    display:flex;
+    align-items:center;
+
+    padding:15px 25px;
+    gap:10px; /* 요소 간 간격 */
+
+}
+
+
+.search-box input{
+    flex:1;
+    border:none;
+    outline:none;
+
+    font-size:24px;
+    background:transparent;
+}
+
+
+.gps-btn{
+    width:60px;
+    height:60px;
+
+    border:3px solid black;
+    border-radius:50%;
+
+    background:white;
+
+    cursor:pointer;
+    font-size:28px;
+
+    transition:0.2s;
+}
+
+.gps-btn:hover{
+    transform:scale(1.05);
+}
+
+
+
+.search-icon{
+    font-size:30px;
+    cursor: pointer;
+}
+
+
+
+.region-grid{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:60px 40px;
+
+    justify-content:center;
+
+    margin-bottom:80px;
+}
+
+.region-grid button{
+    width:160px;
+    height:90px;
+
+    border:3px solid black;
+    border-radius:60px;
+
+    background:white;
+
+    font-size:30px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.2s;
+}
+
+
+.region-grid button:hover{
+    transform:scale(1.02);
+    background-color: #4e6b43;
+    color: white;
+}
+
+.more-btn{
+    width:120px;
+    height:70px;
+
+    margin:auto;
+
+    border:2px solid black;
+    border-radius:45px;
+
+    background:white;
+
+    font-size:25px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.2s;
+}
+
+.more-btn:hover{
+    transform:scale(1.02);
+    background-color: #4e6b43;
+    color: white;
+}
+
+.navbar-brand {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #4A4A4A;
+    text-decoration: none;
+    padding: 0.3125rem;
+    margin-left: 5%;
+}
+
+.navbar-brand:hover {
+    color: rgba(0, 0, 0, 0.9);
+}
+
+
