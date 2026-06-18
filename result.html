@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카페 추천 결과</title>
+
+    <link rel="stylesheet" href="css/result.css">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=c70f235dc9c2a8664cb7dd21bd9a06b0"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="left-panel">
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+    <a class="navbar-brand" href="index.html">Work & Study</a>
+    </nav>
+
+        <h2 id="selectedLocation"><i class="fa-solid fa-location-dot"></i> 강남구</h2>
+
+        <div class="tag-container">
+            <button class="tag-btn">콘센트가 많은</button>
+            <button class="tag-btn">좌석이 많은</button>
+            <button class="tag-btn">넓은 테이블이 있는</button>
+            <button class="tag-btn">늦게까지 운영하는</button>
+            <button class="tag-btn">장시간 이용 가능한</button>
+            <button class="tag-btn">조용한</button>
+            <button class="tag-btn">혼자가기 좋은</button>
+            <button class="tag-btn">함께하기 좋은</button>
+            <button class="tag-btn">식사 가능한</button>
+
+            
+
+        </div>
+
+        <div class="action-buttons">
+            <div class="sort-wrapper">
+                <button id="sortBtn">정렬</button>
+                <div id="sortMenu" class="sort-menu">
+                    <div class="sort-option" data-sort="distance">거리순</div>
+                    <div class="sort-option" data-sort="popular">인기순</div>
+                </div>
+            </div>
+
+            <button id="searchBtn">적용</button>
+        </div>
+
+        <div id="cafeList" onclick="location.href='cafe-detail.html'">
+            <div id="cafeList">
+
+    <!-- 1 -->
+    <div class="cafe-card">
+        <img src="images/twosome.jpg" class="cafe-image">
+
+        <div class="cafe-info">
+            <h3>투썸플레이스 역삼점</h3>
+
+            <p>영업시간 07:00~22:00 (연중무휴)</p>
+            <p>리뷰 482 저장 283</p>
+
+            <div class="tag-list">
+                <span class="card-tag">콘센트가 많은</span>
+                <span class="card-tag">좌석이 많은</span>
+                <span class="card-tag">장시간 이용 가능한</span>
+                <span class="card-tag">함께하기 좋은</span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 2 -->
+    <div class="cafe-card">
+        <img src="images/cafe.jpg" class="cafe-image">
+
+        <div class="cafe-info">
+            <h3>스타벅스 강남역</h3>
+
+            <p>영업시간 09:00~23:00 (연중무휴)</p>
+            <p>리뷰 321 저장 210</p>
+
+            <div class="tag-list">
+                <span class="card-tag">좌석이 많은</span>
+                <span class="card-tag">넓은 테이블이 있는</span>
+                <span class="card-tag">함께하기 좋은</span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 3 -->
+    <div class="cafe-card">
+        <img src="images/cafe1.jpg" class="cafe-image">
+
+        <div class="cafe-info">
+            <h3>카페 소소</h3>
+
+            <p>영업시간 11:00~22:00 (화~일, 월 휴무)</p>
+            <p>리뷰 158 저장 127</p>
+
+            <div class="tag-list">
+                <span class="card-tag">조용한</span>
+                <span class="card-tag">혼자가기 좋은</span>
+                <span class="card-tag">장시간 이용 가능한</span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 4 -->
+    <div class="cafe-card">
+        <img src="images/cafe2.jpg" class="cafe-image">
+
+        <div class="cafe-info">
+            <h3>달빛정원</h3>
+
+            <p>영업시간 10:00~21:00 (월~토, 일 휴무)</p>
+            <p>리뷰 201 저장 183</p>
+
+            <div class="tag-list">
+                <span class="card-tag">조용한</span>
+                <span class="card-tag">혼자가기 좋은</span>
+                <span class="card-tag">콘센트가 많은</span>
+                <span class="card-tag">장시간 이용 가능한</span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 5 -->
+    <div class="cafe-card">
+        <img src="images/cafe3.jpg" class="cafe-image">
+
+        <div class="cafe-info">
+            <h3>브리즈커피</h3>
+
+            <p>영업시간 10:00~24:00 (연중무휴)</p>
+            <p>리뷰 267 저장 198</p>
+
+            <div class="tag-list">
+                <span class="card-tag">늦게까지 운영하는</span>
+                <span class="card-tag">함께하기 좋은</span>
+                <span class="card-tag">좌석이 많은</span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 6 -->
+    <div class="cafe-card">
+        <img src="images/cafe4.jpg" class="cafe-image">
+
+        <div class="cafe-info">
+            <h3>온기커피</h3>
+
+            <p>영업시간 08:00~20:00 (연중무휴)</p>
+            <p>리뷰 134 저장 142</p>
+
+            <div class="tag-list">
+                <span class="card-tag">조용한</span>
+                <span class="card-tag">혼자가기 좋은</span>
+                <span class="card-tag">넓은 테이블이 있는</span>
+                <span class="card-tag">콘센트가 많은</span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 7 -->
+    <div class="cafe-card">
+        <img src="images/cafe5.jpg" class="cafe-image">
+
+        <div class="cafe-info">
+            <h3>블루밍카페</h3>
+
+            <p>영업시간 10:00~23:30 (연중무휴)</p>
+            <p>리뷰 389 저장 275</p>
+
+            <div class="tag-list">
+                <span class="card-tag">함께하기 좋은</span>
+                <span class="card-tag">좌석이 많은</span>
+                <span class="card-tag">늦게까지 운영하는</span>
+                <span class="card-tag">넓은 테이블이 있는</span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 8 -->
+    <div class="cafe-card">
+        <img src="images/cafe6.jpg" class="cafe-image">
+
+        <div class="cafe-info">
+            <h3>라떼하우스</h3>
+
+            <p>영업시간 09:00~21:00 (월~토, 일 휴무)</p>
+            <p>리뷰 176 저장 138</p>
+
+            <div class="tag-list">
+                <span class="card-tag">혼자가기 좋은</span>
+                <span class="card-tag">조용한</span>
+                <span class="card-tag">장시간 이용 가능한</span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 9 -->
+    <div class="cafe-card">
+        <img src="images/cafe7.jpg" class="cafe-image">
+
+        <div class="cafe-info">
+            <h3>구름다락</h3>
+
+            <p>영업시간 08:00~22:00 (연중무휴)</p>
+            <p>리뷰 248 저장 221</p>
+
+            <div class="tag-list">
+                <span class="card-tag">콘센트가 많은</span>
+                <span class="card-tag">넓은 테이블이 있는</span>
+                <span class="card-tag">혼자가기 좋은</span>
+                <span class="card-tag">조용한</span>
+                <span class="card-tag">좌석이 많은</span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 10 -->
+    <div class="cafe-card">
+        <img src="images/cafe8.jpg" class="cafe-image">
+
+        <div class="cafe-info">
+            <h3>카페 담다</h3>
+
+            <p>영업시간 11:00~24:00 (연중무휴)</p>
+            <p>리뷰 415 저장 302</p>
+
+            <div class="tag-list">
+                <span class="card-tag">함께하기 좋은</span>
+                <span class="card-tag">좌석이 많은</span>
+                <span class="card-tag">늦게까지 운영하는</span>
+                <span class="card-tag">콘센트가 많은</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+        </div>
+
+    </div>
+
+    <div class="right-panel">
+        <div id="map"></div>
+            <a href="expand-map.html" class="expand-map-btn" id="expandBtn">
+                ⤢
+            </a>
+    </div>
+</div>
+
+<script>
+
+const map = new kakao.maps.Map(document.getElementById("map"), {
+    center: new kakao.maps.LatLng(37.5007,127.0365),
+    level: 5
+});
+
+const cafes=[
+
+{lat:37.4981,lng:127.0276},
+
+{lat:37.5002,lng:127.0365},
+
+{lat:37.5101,lng:127.0305},
+
+{lat:37.5063,lng:127.0427},
+
+{lat:37.5085,lng:127.0493},
+
+{lat:37.4958,lng:127.0390},
+
+{lat:37.4924,lng:127.0458},
+
+{lat:37.5142,lng:127.0331},
+
+{lat:37.5039,lng:127.0520},
+
+{lat:37.4973,lng:127.0439}
+
+];
+
+for(let i=0;i<cafes.length;i++){
+
+    new kakao.maps.Marker({
+
+        position:new kakao.maps.LatLng(
+            cafes[i].lat,
+            cafes[i].lng
+        ),
+
+        map:map
+
+    });
+
+}
+
+let markers=[];
+updateView();
+
+</script>
+
+</body>
+</html>

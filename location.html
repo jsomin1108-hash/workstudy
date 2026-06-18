@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지역 설정</title>
+
+    <link rel="stylesheet" href="css/location.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+        <a class="navbar-brand" href="index.html">Work & Study</a>
+
+<div class="container">
+
+    <h1>
+        <i class="fa-solid fa-location-dot"></i>
+        어느 지역 카페를 찾고 계신가요?
+    </h1>
+
+    <div class="search-box">
+
+        <button class="gps-btn"
+                onclick="location.href='map.html'">
+            <i class="fa-solid fa-crosshairs"></i>
+        </button>
+
+        <input type="text"
+        id="regionInput"
+        placeholder="지역명을 입력하세요"
+        onkeypress="searchRegion(event)">
+
+        <i class="fa-solid fa-magnifying-glass search-icon"
+            onclick="searchRegion()"></i>
+    </div>
+
+
+    <div class="region-grid">
+
+        <div class="region-grid">
+
+            <button onclick="location.href='district.html'">서울</button>
+
+            <button>부산</button>
+
+            <button>대구</button>
+
+            <button>인천</button>
+
+            <button>광주</button>
+
+            <button>대전</button>
+
+            <button>울산</button>
+
+            <button>세종</button>
+
+            <button>경기도</button>
+
+            <button>강원도</button>
+
+            <button>충남</button>
+
+            <button>충북</button>
+
+            <button>경북</button>
+
+            <button>경남</button>
+
+            <button>전남</button>
+
+        </div>
+    
+    </div>
+
+
+
+</body>
+</html>

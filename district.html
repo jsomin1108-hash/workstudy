@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구·군 선택</title>
+
+    <!-- Font Awesome 아이콘 -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="css/location.css">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+    <a class="navbar-brand" href="index.html">Work & Study</a>
+
+<div class="container">
+
+    <h1 id="regionTitle">서울시의 구를 입력해주세요</h1>
+
+    <!-- 🔍 검색 영역 -->
+    <div class="search-box">
+
+        <button class="gps-btn" onclick="history.back()">
+            <i class="fa-solid fa-crosshairs"></i>
+        </button>
+
+        <input type="text"
+               id="districtInput"
+               placeholder="구/군 이름 입력"
+               onkeydown="if(event.key==='Enter'){ searchDistrict(); }">
+
+        <i class="fa-solid fa-magnifying-glass search-icon"
+           onclick="searchDistrict()"></i>
+
+    </div>
+
+
+    <div class="region-grid" id="districtGrid">
+
+        <button onclick="location.href='result.html'">강남구</button>
+        <button>강동구</button>
+        <button>강북구</button>
+        <button>강서구</button>
+        <button>관악구</button>
+
+        <button>광진구</button>
+        <button>구로구</button>
+        <button>금천구</button>
+        <button>노원구</button>
+        <button>도봉구</button>
+
+        <button>동대문구</button>
+        <button>동작구</button>
+        <button>마포구</button>
+        <button>서대문구</button>
+        <button>서초구</button>
+
+        <button>성동구</button>
+        <button>성북구</button>
+        <button>송파구</button>
+        <button>양천구</button>
+        <button>영등포구</button>
+
+        <button>용산구</button>
+        <button>은평구</button>
+        <button>종로구</button>
+        <button>중구</button>
+        <button>중랑구</button>
+
+    </div>
+
+    <button class="more-btn" onclick="history.back()">
+        이전
+    </button>
+
+</div>
+
+
+</body>
+</html>

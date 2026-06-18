@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리뷰 작성</title>
+
+    <link rel="stylesheet" href="css/review.css">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+<div class="container">
+
+
+    <div class="cafe-info">
+        <img src="images/twosome.jpg" alt="카페 사진">
+
+        <div class="info-text">
+            <h2>투썸플레이스 강남역점</h2>
+            <p>2번 방문</p>
+        </div>
+    </div>
+
+
+    <div class="section">
+
+        <h3>방문 만족도</h3>
+
+        <div class="satisfaction-group">
+
+            <div class="satisfaction-item">
+                <img src="images/sad.jpg"
+                    class="face"
+                    data-value="아쉬워요">
+
+            </div>
+
+            <div class="satisfaction-item">
+                <img src="images/normal.jpg"
+                    class="face"
+                    data-value="괜찮아요">
+            </div>
+
+            <div class="satisfaction-item">
+                <img src="images/happy.jpg"
+                    class="face"
+                    data-value="만족해요">
+            </div>
+
+        </div>
+
+    </div>
+    <input type="hidden" id="satisfaction" value="">
+
+
+    <div class="section">
+        <h3>대기 시간</h3>
+
+        <div class="wait-group">
+            <button class="tag">바로입장</button>
+            <button class="tag">10분 이내</button>
+            <button class="tag">30분 이내</button>
+            <button class="tag">30분 이상</button>
+            <button class="tag">1시간 이상</button>
+        </div>
+    </div>
+
+
+
+    <div class="section">
+        <h3>분위기</h3>
+
+        <div class="tag-group">
+            <button class="tag">대화하기 좋음</button>
+            <button class="tag">집중하기 좋음</button>
+            <button class="tag">아늑함</button>
+            <button class="tag">오래 머물기 좋음</button>
+            <button class="tag">조용함</button>
+        </div>
+    </div>
+
+
+
+    <div class="section">
+        <h3>시설</h3>
+
+        <div class="tag-group">
+            <button class="tag">매장이 청결함</button>
+            <button class="tag">화장실이 깨끗함</button>
+            <button class="tag">좌석이 편함</button>
+            <button class="tag">콘센트 많음</button>
+            <button class="tag">테이블 넓음</button>
+        </div>
+    </div>
+
+
+    <div class="section">
+        <h3><i class="fa-solid fa-pen"></i> 리뷰를 작성해주세요</h3>
+
+        <textarea placeholder="리뷰를 입력해주세요."></textarea>
+    </div>
+
+
+
+    <div class="submit-box">
+        <button id="submitBtn" class="submit-btn">등록</button>
+    </div>
+
+</div>
+
+
+</body>
+<script>
+    submitBtn.onclick = function(){
+        alert("등록이 완료되었습니다");
+    }
+
+</script>
+</html>

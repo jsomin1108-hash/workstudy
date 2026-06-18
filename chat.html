@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>채팅</title>
+
+<style>
+    @font-face {
+        font-family: 'Suit';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Thin.woff2') format('woff2');
+        font-weight: 100;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Suit';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+        font-weight: 400;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Suit';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Bold.woff2') format('woff2');
+        font-weight: 700;
+        font-display: swap;
+    }
+
+    body { 
+        font-family: 'Suit';
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        height:100vh;
+        font-family:'Suit', sans-serif;
+    }
+
+    .container{
+        display:flex;
+        height:100vh;
+        background-color: #4E6B43;
+    }
+
+    /* 왼쪽 */
+    .sidebar{
+        width:25%;
+        border-right:2px solid black;
+    }
+
+    .my-profile{
+        display:flex;
+        align-items:center;
+        gap:15px;
+
+        padding:10px 20px;
+        border-bottom:2px solid black;
+        background-color: #4E6B43;
+        color: #f6f2eb;
+    }
+
+    .profile-img{
+        width:50px;
+        height:50px;
+        background-image: url('images/profile.png');
+        border:0.5px solid black;
+        border-radius:50%;
+        background-size: cover;  
+        background-position: center;
+        flex-shrink: 0;
+    }
+
+    .now{
+        color: black;
+    }
+
+    .sidebar {
+        background-color: #f6f2eb;
+    }
+
+    .chat-room1{
+        display:flex;
+        align-items:center;
+        gap:15px;
+
+        padding:20px;
+        border-bottom:1.5px solid black;
+
+        cursor:pointer;
+        color: #4a4a4a;
+        background-color:#f6f2eb;
+    }
+    .chat-room1 p{
+        color: #4a4a4a !important;
+    }
+
+
+
+    .chat-room{
+        display:flex;
+        align-items:center;
+        gap:15px;
+
+        padding:20px;
+        border-bottom:1.5px solid black;
+
+        cursor:pointer;
+        color: #f6f2eb;
+        background-color: #4E6B43;
+    }
+
+    .chat-room:hover{
+        background-color: #f6f2eb;
+        color:black;
+    }
+
+    .chat-info p{
+        margin: 0;
+        margin-top:2px;
+        color:#e0e0e0;
+        font-size:14px;
+    }
+
+    .chat-info h3{
+        margin: 0;
+    }
+
+    .chat-area{
+        flex:1;
+        display:flex;
+        flex-direction:column;
+        background-color: #f6f2eb;
+    }
+
+    .chat-header{
+        background-color: #f6f2eb;
+        display:flex;
+        align-items:center;
+        gap:15px;
+        color: #4a4a4a;
+
+        padding:10px 20px;
+        border-bottom:2px solid black;
+    }
+
+    .messages{
+        flex:1;
+        padding:30px;
+
+        display:flex;
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .message{
+        display:flex;
+        align-items:flex-end;
+        gap:10px;
+    }
+
+    .message.me{
+        justify-content:flex-end;
+    }
+
+    .bubble{
+        max-width:300px;
+
+        padding:12px 18px;
+
+        border:1.5px solid black;
+        border-radius:20px;
+        background-color: #ffffff;
+    }
+
+    .chat-input{
+        background-color: #f6f2eb;
+        border-top:1.5px solid black;
+
+        display:flex;
+        align-items:center;
+
+        gap:10px;
+
+        padding:15px;
+    }
+
+    .chat-input button{
+        width:40px;
+        height:40px;
+
+        border:1.5px solid black;
+        border-radius:50%;
+
+        background:white;
+
+        cursor:pointer;
+    }
+
+    .chat-input input{
+        flex:1;
+
+        height:40px;
+
+        padding:0 15px;
+
+        border:1.5px solid black;
+        border-radius:20px;
+    }
+
+    .plus{
+        font-size: 22px;   
+        font-weight: 400;     
+    }
+
+    .send{
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .time{
+        font-size: 14px;
+        color: #4a4a4a;
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+
+    <div class="sidebar">
+
+        <div class="my-profile">
+            <div class="profile-img"></div>
+            <h2>MY</h2>
+        </div>
+
+        <div class="chat-room1">
+            <div class="profile-img"></div>
+
+            <div class="chat-info">
+                <h3 class="now">이가인</h3>
+                <p>저장소에 넣어놨어!</p>
+            </div>
+        </div>
+
+        <div class="chat-room">
+            <div class="profile-img"></div>
+
+            <div class="chat-info">
+                <h3>오지윤</h3>
+                <p>언제 만날까?</p>
+            </div>
+        </div>
+
+        <div class="chat-room">
+            <div class="profile-img"></div>
+
+            <div class="chat-info">
+                <h3>윤형주</h3>
+                <p>거기 좋더라~</p>
+            </div>
+        </div>
+
+        <div class="chat-room">
+            <div class="profile-img"></div>
+
+            <div class="chat-info">
+                <h3>김채영</h3>
+                <p>고마워!</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="chat-area">
+
+        <div class="chat-header">
+            <div class="profile-img"></div>
+            <h2>이가인</h2>
+        </div>
+
+
+        <div class="messages">
+
+            <div class="message">
+                <div class="profile-img"></div>
+
+                <div class="bubble">
+                    카페 추천좀!
+                </div>
+                <div class="time">
+                    오전 11:03
+                </div>
+            </div>
+
+            <div class="message me">
+
+                <div class="time">
+                    오후 1시 24분
+                </div>
+                <div class="bubble">
+                    저장소에 넣어놨어!
+                </div>
+
+                <div class="profile-img"></div>
+            </div>
+
+        </div>
+
+        <div class="chat-input">
+
+            <button class="plus">+</button>
+
+            <button>😊</button>
+
+            <input type="text" placeholder="메시지를 입력하세요">
+
+            <button class="send">↑</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

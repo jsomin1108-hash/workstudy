@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Page</title>
+  <link rel="stylesheet" href="css/mypage.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+    <a class="navbar-brand" href="index.html">Work & Study</a>
+
+  <header>
+  <div class="logo">My page</div>
+
+  <img src="images/hot.png" class="header-img">
+</header>
+
+  <main class="mypage">
+    <section class="left">
+      <p class="menu-title">계정</p>
+      <button class="menu-btn active" onclick="showPage('profile', this)">내 프로필</button>
+      <button class="menu-btn" onclick="showPage('security', this)">로그인 및 보안</button>
+
+      <div class="line"></div>
+
+      <p class="menu-title">관리</p>
+      <button class="menu-btn" onclick="showPage('storage', this)">내 카페 저장소</button>
+      <button class="menu-btn" onclick="showPage('review', this)">내 리뷰</button>
+      <button class="menu-btn" onclick="showPage('shared', this)">공유 카페 저장소</button>
+      <button class="menu-btn" onclick="showPage('friend', this)">카페 친구 관리</button>
+    </section>
+
+    <section class="right" id="content"></section>
+  </main>
+
+  <script>
+    const pages = {
+      profile: `
+        <div class="profile-title">내 프로필</div>
+        <div class="profile-top">
+          <div class="profile-img">
+            <img src="images/pp.jpg" alt="pp">
+          </div>
+          <div class="profile-buttons">
+            <button class="small-btn">내 프로필</button>
+            <button class="small-btn">사진 업로드</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>이름</label>
+          <input type="text">
+        </div>
+        <div class="form-group">
+          <label>이메일</label>
+          <input type="email">
+        </div>
+        <div class="form-group">
+          <label>주 활동 지역</label>
+          <input type="text">
+        </div>
+        <div class="form-group">
+          <label>선호 조건</label>
+          <input type="text">
+        </div>
+        <button class="save-btn">변경사항 저장</button>
+        <div class="bottom-line"></div>
+        <button class="delete-btn">계정 삭제</button>
+      `,
+
+      security: `
+        <div class="profile-title">로그인 및 보안</div>
+        <div class="security-box">
+          <div class="security-section-title">로그인</div>
+          <p class="security-text">비밀번호</p>
+          <p class="security-small-text">마지막 변경일 : 5월 30일</p>
+          <button class="security-btn">비밀번호 설정</button>
+          
+          <div class="security-section-title">보안</div>
+          <p class="security-text">모든 기기에서 로그아웃</p>
+          <button class="security-btn">모든 기기에서 로그아웃</button>
+          
+          <p class="security-text">로그인이 되어있는 기기</p>
+          <div class="device-list">
+            <div class="device-item">Other</div>
+            <div class="device-item device-time">1시간 전</div>
+            <div class="device-item">Chrome</div>
+          </div>
+        </div>
+      `,
+
+      storage: `
+        <div class="profile-title">내 카페 저장소</div>
+        <div class="storage-grid">
+          <a href="cafe1.html" class="cafe-card-link">
+            <div class="cafe-card">
+              <h3>새검정 <span class="bookmark">❤️</span></h3>
+              <div class="cafe-img-box">
+                <img src="assets/img2/img2.1.jpg" alt="카페 1 이미지">
+              </div>
+              <hr>
+
+              <div class="mini-tags">
+                <span>조용한</span>
+                <span>콘센트가 많은</span>
+              </div>
+            </div>
+          </a>
+          <a href="cafe2.html" class="cafe-card-link">
+            <div class="cafe-card">
+              <h3>티틸 CAFE <span class="bookmark">❤️</span></h3>
+              <div class="cafe-img-box">
+                <img src="assets/img2/img2.2.jpg" alt="카페 2 이미지">
+              </div>
+              <hr>
+
+              <div class="mini-tags">
+                <span>식사 가능한</span>
+                <span>콘센트</span>
+                <span>장시간 이용 가능한</span>
+              </div>
+            </div>
+          </a>
+          <a href="cafe3.html" class="cafe-card-link">
+            <div class="cafe-card">
+              <h3>스타벅스 수유점 <span class="bookmark">❤️</span></h3>
+              <div class="cafe-img-box">
+                <img src="assets/img2/img2.3.jpg" alt="카페 3 이미지">
+              </div>
+              <hr>
+              <div class="mini-tags">
+                <span>좌석이 많은</span>
+                <span>함께 하기 좋은</span>
+              </div>
+            </div>
+          </a>
+          <a href="cafe4.html" class="cafe-card-link">
+            <div class="cafe-card">
+              <h3>프로토콜 상수점 <span class="bookmark">❤️</span></h3>
+              <div class="cafe-img-box">
+                <img src="assets/img2/img2.4.jpg" alt="카페 4 이미지">
+              </div>
+              <hr>
+              <div class="mini-tags">
+                <span>늦게까지 운영하는</span>
+                <span>혼자 가기 좋은</span>
+              </div>
+            </div>
+          </a>
+          <a href="cafe5.html" class="cafe-card-link">
+            <div class="cafe-card">
+              <h3>포어플랜 <span class="bookmark">❤️</span></h3>
+              <div class="cafe-img-box">
+                <img src="assets/img2/img2.5.jpg" alt="카페 5 이미지">
+              </div>
+              <hr>
+              <div class="mini-tags">
+                <span>조용한</span>
+                <span>좌석이 많은</span>
+              </div>
+            </div>
+          </a>
+          <a href="cafe6.html" class="cafe-card-link">
+            <div class="cafe-card">
+              <h3>섹터커피 <span class="bookmark"></span></h3>
+              
+              <div class="cafe-img-box">
+                <img src="assets/img2/img2.6.jpg" alt="카페 6 이미지">
+              </div>
+              <hr>
+              <div class="mini-tags">
+                <span>넓은 테이블이 있는</span>
+                <span>팀플하기 좋음</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      `,
+
+      review: `
+        <div class="profile-title">내 리뷰</div>
+        <div class="review-grid">
+          <div class="review-card">
+            <div class="review-top">
+              <div class="review-img-box">
+                <img src="assets/img2/img2.1.jpg" alt="새검정 이미지">
+              </div>
+              <div class="review-info">
+                <div class="review-title-wrap">
+                  <h3>새검정</h3>
+                  <div class="more-menu-container">
+                    <button class="more-btn" onclick="toggleDropdown(event, this)">⋮</button>
+                    <div class="dropdown-menu">
+                      <button onclick="alert('리뷰 수정 기능이 실행됩니다.')">리뷰 수정</button>
+                      <button onclick="alert('리뷰를 삭제하시겠습니까?')">리뷰 삭제</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="review-rating">⭐⭐⭐⭐⭐ 5.0</div>
+              </div>
+            </div>
+            <hr class="review-hr">
+            <div class="review-content">
+              <p>사장님이 너무 친절하시고 인테리어가 아늑해요. 조용하고 콘센트가 많아서 좋고 넓은 테이블이 있어서 팀블과제 하기에도 정말 최고의 환경입니다!</p>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-top">
+              <div class="review-img-box">
+                <img src="assets/img2/img2.2.jpg" alt="티틸 이미지">
+              </div>
+              <div class="review-info">
+                <div class="review-title-wrap">
+                  <h3>티틸 CAFE</h3>
+                  <div class="more-menu-container">
+                    <button class="more-btn" onclick="toggleDropdown(event, this)">⋮</button>
+                    <div class="dropdown-menu">
+                      <button onclick="alert('리뷰 수정 기능이 실행됩니다.')">리뷰 수정</button>
+                      <button onclick="alert('리뷰를 삭제하시겠습니까?')">리뷰 삭제</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="review-rating">⭐⭐⭐⭐ 4.0</div>
+              </div>
+            </div>
+            <hr class="review-hr">
+            <div class="review-content">
+              <p>공간이 되게 감각적이고 작업 좌석 배치가 모니터 보기 최적화되어있네요. 잔잔한 음악 소리 덕분에 집중이 더 잘 되는 느낌을 받았습니다. 하지만 3시간만 이용 가능한 점이 아쉬웠어요.</p>
+            </div>
+          </div>
+        </div>
+      `,
+
+     shared: `
+  <div class="profile-title">공유 카페 저장소</div>
+
+  <div class="shared-list-container">
+
+    <div class="shared-item" onclick="showSharedCafeDetail()">
+      <div class="shared-circle">
+        <img src="images/p1.jpg" alt="p1">
+      </div>
+      <div class="shared-info">
+        <h3>팀 프로젝트 작업용 카페</h3>
+        <div class="shared-meta">
+          <span class="meta-tag"><span class="icon">📍</span> 7</span>
+          <span class="meta-tag"><span class="icon">👥</span> 3</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="shared-item">
+      <div class="shared-circle">
+        <img src="images/p2.jpg" alt="p2">
+      </div>
+      <div class="shared-info">
+        <h3>공부하면서 먹을 디저트 맛집</h3>
+        <div class="shared-meta">
+          <span class="meta-tag"><span class="icon">📍</span> 12</span>
+          <span class="meta-tag"><span class="icon">👥</span> 5</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="shared-item">
+     <div class="shared-circle">
+        <img src="images/p3.jpg" alt="p3">
+      </div>
+      <div class="shared-info">
+        <h3>우리집 근처 카공 아지트</h3>
+        <div class="shared-meta">
+          <span class="meta-tag"><span class="icon">📍</span> 4</span>
+          <span class="meta-tag"><span class="icon">👥</span> 2</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="shared-item">
+      <div class="shared-circle">
+        <img src="images/p4.jpg" alt="p4">
+      </div>
+      <div class="shared-info">
+        <h3>콘센트 명당 카페 공유드림!!!^^</h3>
+        <div class="shared-meta">
+          <span class="meta-tag"><span class="icon">📍</span> 9</span>
+          <span class="meta-tag"><span class="icon">👥</span> 4</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="shared-item">
+      <div class="shared-circle">
+        <img src="images/p5.jpg" alt="p5">
+      </div>
+      <div class="shared-info">
+        <h3>성수/홍대 감성카페 리스트</h3>
+        <div class="shared-meta">
+          <span class="meta-tag"><span class="icon">📍</span> 15</span>
+          <span class="meta-tag"><span class="icon">👥</span> 8</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+`,
+
+      friend: `
+        <div class="profile-title">카페 친구 관리</div>
+        
+        <div class="friend-search-box">
+          <input type="text" placeholder="친구 이름 또는 ID를 검색하세요...">
+          <button class="search-btn">🔍</button>
+        </div>
+
+        <div class="friend-list-container">
+          
+          <div class="friend-item">
+            <div class="friend-info-left">
+              <span class="friend-name">이가인</span>
+              <span class="friend-divider">|</span>
+              <span class="friend-id">rkdls__dl</span>
+            </div>
+            <button class="chat-btn" onclick="location.href='chat.html'">
+              연락하기 <span class="chat-icon">💬</span>
+            </button>
+          </div>
+
+          <div class="friend-item">
+            <div class="friend-info-left">
+              <span class="friend-name">오지윤</span>
+              <span class="friend-divider">|</span>
+              <span class="friend-id">_o.zynn</span>
+            </div>
+            <button class="chat-btn" onclick="alert('오지윤 님과 채팅방으로 연결됩니다.')">
+              연락하기 <span class="chat-icon">💬</span>
+            </button>
+          </div>
+
+          <div class="friend-item">
+            <div class="friend-info-left">
+              <span class="friend-name">윤형주</span>
+              <span class="friend-divider">|</span>
+              <span class="friend-id">hj_zzang</span>
+            </div>
+            <button class="chat-btn" onclick="alert('윤형주 님과 채팅방으로 연결됩니다.')">
+              연락하기 <span class="chat-icon">💬</span>
+            </button>
+          </div>
+
+          <div class="friend-item">
+            <div class="friend-info-left">
+              <span class="friend-name">김채영</span>
+              <span class="friend-divider">|</span>
+              <span class="friend-id">chae_latte</span>
+            </div>
+            <button class="chat-btn" onclick="alert('김채영 님과 채팅방으로 연결됩니다.')">
+              연락하기 <span class="chat-icon">💬</span>
+            </button>
+          </div>
+
+          <div class="friend-item">
+            <div class="friend-info-left">
+              <span class="friend-name">최현서</span>
+              <span class="friend-divider">|</span>
+              <span class="friend-id">hseo_americano</span>
+            </div>
+            <button class="chat-btn" onclick="alert('최현서 님과 채팅방으로 연결됩니다.')">
+              연락하기 <span class="chat-icon">💬</span>
+            </button>
+          </div>
+
+        </div>
+      `
+    };
+
+    const content = document.getElementById("content");
+
+    function showPage(page, button) {
+      content.innerHTML = pages[page];
+      const buttons = document.querySelectorAll(".menu-btn");
+      buttons.forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
+    }
+
+
+    function toggleDropdown(event, button) {
+      event.stopPropagation();
+      document.querySelectorAll('.dropdown-menu').forEach(menu => {
+        if(menu !== button.nextElementSibling) menu.classList.remove('show');
+      });
+      const dropdown = button.nextElementSibling;
+      dropdown.classList.toggle('show');
+    }
+
+    window.addEventListener('click', () => {
+      document.querySelectorAll('.dropdown-menu').forEach(menu => menu.classList.remove('show'));
+    });
+
+    showPage("profile", document.querySelector(".menu-btn"));
+
+    function showSharedCafeDetail() {
+  content.innerHTML = `
+    <div class="shared-detail-header">
+      <button class="back-btn" onclick="showPage('shared', document.querySelectorAll('.menu-btn')[4])">←</button>
+      <div class="profile-title detail-title">팀 프로젝트 작업용 카페</div>
+      <div class="detail-count">📍 6   👥 3 </div>
+    </div>
+
+    <div class="place-section">
+      <p class="place-title">👤이가인</p>
+
+      <div class="mini-cafe-grid">
+        <div class="mini-cafe-card">
+          <div>
+          <h4>새검정</h4>
+          </div>
+          <div class="mini-heart">❤️</div>
+          <div class="mini-img">
+            <img src="images/cafe.jpg" alt="cafe1">
+          </div>
+          <div class="mini-tags">
+            <span>함께 하기 좋은</span>
+            <span>조용한</span>
+          </div>
+        </div>
+
+        <div class="mini-cafe-card">
+          <div>
+          <h4>온기커피</h4>
+          </div>
+          <div class="mini-heart">❤️</div>
+          <div class="mini-img">
+            <img src="images/cafe2.jpg" alt="cafe2">
+          </div>
+          <div class="mini-tags">
+            <span>넓은 테이블이 있는</span>
+            <span>장시간 이용 가능한</span>
+          </div>
+        </div>
+
+        <div class="mini-cafe-card">
+          <div>
+          <h4>스타벅스 수유점</h4>
+          </div>
+          <div class="mini-heart">❤️</div>
+          <div class="mini-img">
+            <img src="images/cafe3.jpg" alt="cafe3">
+          </div>
+          <div class="mini-tags">
+            <span>좌석이 많은</span>
+            <span>함께 하기 좋은</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="place-section">
+      <p class="place-title">👤오지윤</p>
+
+      <div class="mini-cafe-grid">
+        <div class="mini-cafe-card">
+          <div>
+          <h4>포어플랜</h4>
+          </div>
+          <div class="mini-heart">❤️</div>
+          <div class="mini-img">
+            <img src="images/cafe4.jpg" alt="cafe4">
+          </div>
+          <div class="mini-tags">
+            <span>콘센트가 많은</span>
+            <span>늦게까지 운영하는</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="place-section">
+      <p class="place-title">👤박봉지</p>
+
+      <div class="mini-cafe-grid">
+        <div class="mini-cafe-card">
+          <div>
+          <h4>섹터커피</h4>
+          </div>
+
+          <div class="mini-heart">❤️</div>
+          <div class="mini-img">
+            <img src="images/cafe5.jpg" alt="cafe5">
+          </div>
+          <div class="mini-tags">
+            <span>식사 가능한</span>
+            <span>장시간 이용 가능한</span>
+          </div>
+        </div>
+
+        <div class="mini-cafe-card">
+          <div>
+          <h4>카페소소</h4>
+          </div>
+          <div class="mini-heart">❤️</div>
+          <div class="mini-img">
+            <img src="images/cafe6.jpg" alt="cafe6">
+          </div>
+          <div class="mini-tags">
+            <span>넓은 테이블이 있는</span>
+            <span>늦게까지 운영하는</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+  </script>
+</body>
+</html>
